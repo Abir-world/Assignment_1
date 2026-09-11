@@ -1,0 +1,12 @@
+function getCngFare(distance, isNight = false, waitingMinutes = 0) {
+  let distanceCharge = distance <= 2 ? 50 : 50 + (distance - 2) * 15;
+  let waitingCharge = waitingMinutes * 2;
+  let total = distanceCharge + waitingCharge;
+
+  if (isNight) {
+    total *= 1.2;
+  }
+  return total;
+}
+
+console.log(getCngFare(5, false, 10));
